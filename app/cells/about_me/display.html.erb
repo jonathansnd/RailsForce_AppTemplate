@@ -1,0 +1,31 @@
+<div class="popover c_panel">
+	<div class="inner">
+	<div class="content">
+	<table>
+				
+	<tr><td><strong>About Me</strong></td></tr>
+	<tr><td><i><%= @chatteruser.raw_hash["aboutMe"] %> </i></td></tr>
+	<tr><td><strong>Chatter : </strong> <a href="<%= @sfservice.instance_url %>/<%= @chatteruser.raw_hash["id"] %>" target="_blank" class="detailsLink">Full Profile</a></td></tr>
+	<tr><td><strong>Name : </strong> <%= @chatteruser.raw_hash["name"] %></td></tr>
+	<tr><td><strong>Email : </strong> <%= @chatteruser.raw_hash["email"] %></td></tr>
+	<% @chatteruser.raw_hash["phoneNumbers"].each do |ph| %>
+	  	<tr><td>
+			<b>Phone <%= ph["type"]%>:</b>
+			<a href='tel:<%= ph["number"] %>' 
+				rel="external"><%= ph["number"] %></a>
+		</td></tr>
+	<% end %>
+
+	<tr><td><b>Location: </b></td></tr>
+
+	<tr><td>
+	<%= @chatteruser.raw_hash["address"]["street"] %>,
+	<%= @chatteruser.raw_hash["address"]["city"] %> 
+	<%= @chatteruser.raw_hash["address"]["state"] %>
+	</td></tr>
+	<tr><td><strong>Manager Name : </strong> <%= @chatteruser.raw_hash["ManagerName"] %></td></tr>
+
+	</table>
+	</div>
+	</div>
+</div>
