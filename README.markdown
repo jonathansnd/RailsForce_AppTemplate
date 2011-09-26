@@ -7,8 +7,8 @@ This is an App template for a Rails application that interacts with the Force.co
 * Implemented using:
 
  * [Bootstrap](http://twitter.github.com/bootstrap/)
- * [jQuery](http://jquery.com/) & [jQuery UI](http://jqueryui.com/)
- * [Forcedotcom Gem](https://github.com/heroku/databasedotcom)
+ * [jQuery](http://jquery.com/)
+ * [Databasedotcom Gem](https://github.com/heroku/databasedotcom)
  * [Cells](http://cells.rubyforge.org/)
 
 ### Getting Started
@@ -26,5 +26,4 @@ This is an App template for a Rails application that interacts with the Force.co
 
 #### Using a different API Version
 
-#### Configuration of OAuth parameters
-
+### Configuration of OAuth parameters
