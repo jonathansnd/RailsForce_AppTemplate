@@ -7,8 +7,8 @@ SampleApp::Application.configure do
 
   #You setup these in Setup > Development > Remote Access
   #Set your callback url to https://localhost:3000/auth/forcedotcom/callback    
-  ENV['sfdc_consumer_key'] = "3MVG9QDx8IX8nP5Ty6QthdXmQZN30GCq215akOxv3C1yKCktnBnJPhCD868k3wvV0yHD6lxZPNI1Tm8Bspjzg"
-  ENV['sfdc_consumer_secret'] = "6920539322002446909"
+  ENV['sfdc_consumer_key'] = "YOUR CONSUMER KEY GOES HERE"
+  ENV['sfdc_consumer_secret'] = "YOUR CONSUMER SECRET GOES HERE"  
 
   ENV['sfdc_api_version'] = '22.0'
 
