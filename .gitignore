@@ -1,5 +1,3 @@
 *.sqlite3
 tmp
-config/environments/development.rb
-config/environments/production.rb
 .DS_Store
