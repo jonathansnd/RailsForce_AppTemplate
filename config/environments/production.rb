@@ -4,8 +4,12 @@ SampleApp::Application.configure do
   
   ENV['full_host'] = "https://yourtemplateapp.heroku.com"
   ENV['sfdc_login'] = "https://login.salesforce.com"
-  ENV['sfdc_consumer_key'] = "CONSUMERKEYGOESHERE"
-  ENV['sfdc_consumer_secret'] = "CONSUMERSECRETGOESHERE"  
+
+  #You setup these in Setup > Development > Remote Access
+  #Set your callback url to https://yourtemplateapp.heroku.com/auth/forcedotcom/callback  
+  ENV['sfdc_consumer_key'] = "YOUR CONSUMER KEY GOES HERE"
+  ENV['sfdc_consumer_secret'] = "YOUR CONSUMER SECRET GOES HERE"  
+
   ENV['sfdc_api_version'] = '22.0'
 
   ENV['DATABASEDOTCOM_CLIENT_ID'] = ENV['sfdc_consumer_key']

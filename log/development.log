@@ -1,0 +1,185 @@
+DEPRECATION WARNING: ActiveRecord::Associations::AssociationCollection is deprecated! Use ActiveRecord::Associations::CollectionProxy instead. (called from <top (required)> at /Users/jonathanrico/RailsForce_AppTemplate/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-02 17:55:41 -0700
+  Processing by PagesController#home as HTML
+  [1m[36mUser Load (10.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered pages/home.html.erb within layouts/application (155.5ms)
+Rendered layouts/_stylesheets.html.erb (0.9ms)
+  [1m[35mService Load (0.6ms)[0m  SELECT "services".* FROM "services" WHERE "services"."user_id" = 2 AND "services"."id" = 2 LIMIT 1
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."id" = 2 AND "services"."user_id" = 2 LIMIT 1[0m
+Rendered app/cells/search_box/display.html.erb (0.4ms)
+Rendered layouts/_header.html.erb (195.3ms)
+Rendered layouts/_footer.html.erb (32.3ms)
+Completed 200 OK in 479ms (Views: 466.4ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-02 17:55:42 -0700
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered pages/home.html.erb within layouts/application (60.7ms)
+Rendered layouts/_stylesheets.html.erb (0.5ms)
+  [1m[36mService Load (0.3ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."user_id" = 2 AND "services"."id" = 2 LIMIT 1[0m
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."id" = 2 AND "services"."user_id" = 2 LIMIT 1
+Rendered app/cells/search_box/display.html.erb (0.1ms)
+Rendered layouts/_header.html.erb (38.2ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 106ms (Views: 104.3ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2011-10-02 17:55:45 -0700
+  Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ITKg+qI8X0Olv1ILqOB2UDNHEM8SjjLH0kGkuB6eNLo="}
+Redirected to https://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-02 17:55:45 -0700
+  Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered pages/home.html.erb within layouts/application (43.4ms)
+Rendered layouts/_stylesheets.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 52ms (Views: 51.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2011-10-02 17:55:46 -0700
+  Processing by SessionsController#authenticateSF as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 1ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-10-02 17:55:46 -0700
+
+
+Started GET "/signin" for 127.0.0.1 at 2011-10-02 17:55:47 -0700
+  Processing by SessionsController#authenticateSF as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-10-02 17:55:47 -0700
+
+
+Started GET "/auth/forcedotcom/callback?display=touch&code=aPrxA6bDRmdSUjy4EFB17ZGW.aVhMmIEpJXfXoYwA7_vL9vwfc0eHums.G_RnSlRaCnUWxHf9w%3D%3D" for 127.0.0.1 at 2011-10-02 17:55:54 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"display"=>"touch", "code"=>"aPrxA6bDRmdSUjy4EFB17ZGW.aVhMmIEpJXfXoYwA7_vL9vwfc0eHums.G_RnSlRaCnUWxHf9w==", "provider"=>"forcedotcom"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = '005E0000000MH50IAG' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."user_id" = '005E0000000MH50IAG' AND "users"."id" != 2) LIMIT 1[0m
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."user_id" = 2 AND "services"."provider" = 'forcedotcom' AND "services"."org_id" = '00DE0000000KUrkMAG' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "services" SET "token" = '00DE0000000KUrk!AQsAQE5O4NCFierMtEstDASVZnoy6deKqCp1x72bxOWcff_hHiDoloSzYjWWcL6BronobQPkWWHqJfOPmoZaaWcWunPZrEem', "updated_at" = '2011-10-03 00:55:56.323573' WHERE "services"."id" = 2[0m
+  [1m[35mService Load (0.1ms)[0m  SELECT "services".* FROM "services" WHERE "services"."id" = 2 LIMIT 1
+Redirected to https://localhost:3000/users/2
+Completed 302 Found in 221ms
+
+
+Started GET "/users/2" for 127.0.0.1 at 2011-10-02 17:55:56 -0700
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."id" = 2 AND "services"."user_id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "services".* FROM "services" WHERE "services"."id" = 2 AND "services"."user_id" = 2 LIMIT 1
+Rendered app/cells/profile_photo/display.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."id" = 2 AND "services"."user_id" = 2 LIMIT 1[0m
+Rendered app/cells/user_status/display.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "services".* FROM "services" WHERE "services"."id" = 2 AND "services"."user_id" = 2 LIMIT 1
+Rendered app/cells/about_me/display.html.erb (0.9ms)
+Rendered users/show.html.erb within layouts/application (1875.5ms)
+Rendered layouts/_stylesheets.html.erb (0.4ms)
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."user_id" = 2 AND "services"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "services".* FROM "services" WHERE "services"."id" = 2 AND "services"."user_id" = 2 LIMIT 1
+Rendered app/cells/search_box/display.html.erb (0.1ms)
+Rendered layouts/_header.html.erb (16.5ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 1985ms (Views: 1915.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-10-02 17:56:02 -0700
+  Processing by PagesController#about as HTML
+Rendered pages/about.html.erb within layouts/application (0.3ms)
+Rendered layouts/_stylesheets.html.erb (0.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."user_id" = 2 AND "services"."id" = 2 LIMIT 1
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."id" = 2 AND "services"."user_id" = 2 LIMIT 1[0m
+Rendered app/cells/search_box/display.html.erb (0.1ms)
+Rendered layouts/_header.html.erb (129.4ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 205ms (Views: 203.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-02 17:56:03 -0700
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered pages/home.html.erb within layouts/application (58.5ms)
+Rendered layouts/_stylesheets.html.erb (0.5ms)
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."user_id" = 2 AND "services"."id" = 2 LIMIT 1[0m
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."id" = 2 AND "services"."user_id" = 2 LIMIT 1
+Rendered app/cells/search_box/display.html.erb (0.1ms)
+Rendered layouts/_header.html.erb (62.3ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 128ms (Views: 126.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2011-10-02 17:56:04 -0700
+  Processing by PagesController#contact as HTML
+Rendered pages/contact.html.erb within layouts/application (0.3ms)
+Rendered layouts/_stylesheets.html.erb (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."user_id" = 2 AND "services"."id" = 2 LIMIT 1
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."id" = 2 AND "services"."user_id" = 2 LIMIT 1[0m
+Rendered app/cells/search_box/display.html.erb (0.1ms)
+Rendered layouts/_header.html.erb (123.1ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 131ms (Views: 129.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-02 17:56:06 -0700
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered pages/home.html.erb within layouts/application (58.4ms)
+Rendered layouts/_stylesheets.html.erb (0.5ms)
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."user_id" = 2 AND "services"."id" = 2 LIMIT 1[0m
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."id" = 2 AND "services"."user_id" = 2 LIMIT 1
+Rendered app/cells/search_box/display.html.erb (0.1ms)
+Rendered layouts/_header.html.erb (38.0ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 103ms (Views: 101.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2011-10-02 17:57:16 -0700
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."id" = 2 AND "services"."user_id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "services".* FROM "services" WHERE "services"."id" = 2 AND "services"."user_id" = 2 LIMIT 1
+Rendered app/cells/profile_photo/display.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."id" = 2 AND "services"."user_id" = 2 LIMIT 1[0m
+Rendered app/cells/user_status/display.html.erb (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "services".* FROM "services" WHERE "services"."id" = 2 AND "services"."user_id" = 2 LIMIT 1
+Rendered app/cells/about_me/display.html.erb (0.2ms)
+Rendered users/show.html.erb within layouts/application (2357.5ms)
+Rendered layouts/_stylesheets.html.erb (0.5ms)
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."user_id" = 2 AND "services"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "services".* FROM "services" WHERE "services"."id" = 2 AND "services"."user_id" = 2 LIMIT 1
+Rendered app/cells/search_box/display.html.erb (0.1ms)
+Rendered layouts/_header.html.erb (28.1ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 2461ms (Views: 2393.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-02 18:02:58 -0700
+  Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered pages/home.html.erb within layouts/application (31.9ms)
+Rendered layouts/_stylesheets.html.erb (0.4ms)
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."user_id" = 2 AND "services"."id" = 2 LIMIT 1
+  [1m[36mService Load (0.2ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."id" = 2 AND "services"."user_id" = 2 LIMIT 1[0m
+Rendered app/cells/search_box/display.html.erb (0.1ms)
+Rendered layouts/_header.html.erb (95.2ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 163ms (Views: 160.8ms | ActiveRecord: 1.5ms)
