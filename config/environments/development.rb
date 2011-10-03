@@ -4,6 +4,7 @@ SampleApp::Application.configure do
 
   ENV['full_host'] = "https://localhost:3000"
   ENV['sfdc_login'] = "https://login.salesforce.com"
+  
   ENV['sfdc_consumer_key'] = "3MVG9QDx8IX8nP5SDKtABGAKgTLG5HvlBFkAUwvEEFM7QQ5vyD8bmaoWzI2qsBQpwyZ.Izu2N3UNXdqms.CF9"
   ENV['sfdc_consumer_secret'] = "4971709883066379227"
   ENV['sfdc_api_version'] = '22.0'

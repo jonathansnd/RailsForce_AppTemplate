@@ -2,10 +2,10 @@ SampleApp::Application.configure do
   
   # Settings specified here will take precedence over those in config/application.rb
   
-  ENV['full_host'] = "https://templateapp.heroku.com"
+  ENV['full_host'] = "https://yourtemplateapp.heroku.com"
   ENV['sfdc_login'] = "https://login.salesforce.com"
-  ENV['sfdc_consumer_key'] = "3MVG9QDx8IX8nP5SDKtABGAKgTMclsDhrSuWsPGuWGpwUOdBNVxMEeckUo_6pbdWfJ58kgQcNJg=="
-  ENV['sfdc_consumer_secret'] = "7184693861393544537"  
+  ENV['sfdc_consumer_key'] = "CONSUMERKEYGOESHERE"
+  ENV['sfdc_consumer_secret'] = "CONSUMERSECRETGOESHERE"  
   ENV['sfdc_api_version'] = '22.0'
 
   ENV['DATABASEDOTCOM_CLIENT_ID'] = ENV['sfdc_consumer_key']

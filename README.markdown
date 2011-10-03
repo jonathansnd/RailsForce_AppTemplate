@@ -22,8 +22,16 @@ This is an App template for a Rails application that interacts with the Force.co
 
 ### Configuration from the environment
 
+There are some environment variables under "/config/environments/" where you can define settings for :
+
+ * API Version
+ * Login URL
+ * Consumer Keys
+
 #### Working with a sandbox environment
 
-#### Using a different API Version
+If you're testing against a sandbox you must change the sfdc_login environment variable to https://test.salesforce.com
 
 ### Configuration of OAuth parameters
+
+You can find all of the Omniauth related parameters in lib/forcedotcom
