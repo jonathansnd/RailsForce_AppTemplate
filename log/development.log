@@ -341,3 +341,60 @@ DEPRECATION WARNING: ActiveRecord::Associations::AssociationCollection is deprec
   [1m[36m (2.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110711040732')[0m
   [1m[35m (2.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110711173224')
   [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+DEPRECATION WARNING: ActiveRecord::Associations::AssociationCollection is deprecated! Use ActiveRecord::Associations::CollectionProxy instead. (called from <top (required)> at /Users/jonathanrico/RailsForce_AppTemplate/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-02 19:16:22 -0700
+  Processing by PagesController#home as HTML
+  [1m[36mUser Load (14.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered pages/home.html.erb within layouts/application (129.6ms)
+Rendered layouts/_stylesheets.html.erb (0.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (2.4ms)
+Rendered layouts/_footer.html.erb (38.1ms)
+Completed 200 OK in 270ms (Views: 254.5ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2011-10-02 19:16:25 -0700
+  Processing by SessionsController#authenticateSF as HTML
+Redirected to https://localhost:3000/auth/forcedotcom
+Completed 302 Found in 0ms
+
+
+Started GET "/auth/forcedotcom" for 127.0.0.1 at 2011-10-02 19:16:25 -0700
+
+
+Started GET "/auth/forcedotcom/callback?display=touch&code=aPrxA6bDRmdSUjy4EFB17ZGW.cT3p50A9d5SwByu1M69LyoCYmDxMRkzKX8iaw4Mfk0P7zwdNw%3D%3D" for 127.0.0.1 at 2011-10-02 19:16:44 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"display"=>"touch", "code"=>"aPrxA6bDRmdSUjy4EFB17ZGW.cT3p50A9d5SwByu1M69LyoCYmDxMRkzKX8iaw4Mfk0P7zwdNw==", "provider"=>"forcedotcom"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = '005E0000000MH50IAG' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."user_id" = '005E0000000MH50IAG' LIMIT 1[0m
+  [1m[35mSQL (44.0ms)[0m  INSERT INTO "users" ("active", "admin", "created_at", "email", "encrypted_password", "language", "last_modified_date", "last_status_body", "last_status_created_date", "name", "nickname", "org_id", "picture", "profile", "salt", "sfdc_refresh_token", "sfdc_token", "thumbnail", "updated_at", "user_id", "user_type", "utcOffset") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["active", true], ["admin", false], ["created_at", Mon, 03 Oct 2011 02:16:47 UTC +00:00], ["email", "jonathan.rm@gmail.com"], ["encrypted_password", nil], ["language", "en_US"], ["last_modified_date", Tue, 27 Sep 2011 23:43:26 UTC +00:00], ["last_status_body", nil], ["last_status_created_date", nil], ["name", "Jonathan Rico"], ["nickname", ""], ["org_id", nil], ["picture", "https://c.na9.content.force.com/profilephoto/729E0000000Ckeq/F"], ["profile", nil], ["salt", "748896093e1f3cbc4c01ad7dfbed8c0ddd2513469e9d9634085a32785d5370cc"], ["sfdc_refresh_token", nil], ["sfdc_token", nil], ["thumbnail", "https://c.na9.content.force.com/profilephoto/729E0000000Ckeq/T"], ["updated_at", Mon, 03 Oct 2011 02:16:47 UTC +00:00], ["user_id", "005E0000000MH50IAG"], ["user_type", nil], ["utcOffset", -28800000]]
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "services" ("active", "created_at", "instance_url", "last_status_created_date", "last_status_update", "org_id", "profile", "provider", "token", "token_refresh", "token_secret", "uemail", "uid", "uname", "updated_at", "user_id", "user_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["active", true], ["created_at", Mon, 03 Oct 2011 02:16:47 UTC +00:00], ["instance_url", "https://na9.salesforce.com"], ["last_status_created_date", Thu, 11 Aug 2011 03:34:27 UTC +00:00], ["last_status_update", "hola, probando chatter"], ["org_id", "00DE0000000KUrkMAG"], ["profile", "https://na9.salesforce.com/services/data/v{version}/recent/"], ["provider", "forcedotcom"], ["token", "00DE0000000KUrk!AQsAQPUjp6rEYylxX0uaIZM1W4Nn0xuonk0DNygPTiKo6Vmrd9bQ8NrboNJ5O.bgmm8FjKPNhP.Bc1NHbyDvi_y2RjauY1c4"], ["token_refresh", "5Aep861rEpScxnNE64TZ2nlRqChAwxbHoI7yyzjzJlNJaSlCzmjaKzwIPdiw3LviV8j3pop_MdggQ=="], ["token_secret", ""], ["uemail", "jonathan.rm@gmail.com"], ["uid", "005E0000000MH50IAG"], ["uname", "surveys_dev@jonathanrico.com"], ["updated_at", Mon, 03 Oct 2011 02:16:47 UTC +00:00], ["user_id", 1], ["user_type", "STANDARD"]]
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."user_id" = 1 LIMIT 1
+  [1m[36mService Load (0.1ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."id" = 1 LIMIT 1[0m
+Redirected to https://localhost:3000/users/1
+Completed 302 Found in 386ms
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-10-02 19:16:47 -0700
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mService Load (0.3ms)[0m  SELECT "services".* FROM "services" WHERE "services"."id" = 1 AND "services"."user_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."id" = 1 AND "services"."user_id" = 1 LIMIT 1[0m
+Rendered app/cells/profile_photo/display.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "services".* FROM "services" WHERE "services"."id" = 1 AND "services"."user_id" = 1 LIMIT 1
+Rendered app/cells/user_status/display.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."id" = 1 AND "services"."user_id" = 1 LIMIT 1[0m
+Rendered app/cells/about_me/display.html.erb (0.9ms)
+Rendered users/show.html.erb within layouts/application (7302.9ms)
+Rendered layouts/_stylesheets.html.erb (0.4ms)
+  [1m[35mService Load (0.2ms)[0m  SELECT "services".* FROM "services" WHERE "services"."user_id" = 1 AND "services"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "services".* FROM "services" WHERE "services"."id" = 1 AND "services"."user_id" = 1 LIMIT 1[0m
+Rendered app/cells/search_box/display.html.erb (0.4ms)
+Rendered layouts/_header.html.erb (47.4ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 7466ms (Views: 7394.3ms | ActiveRecord: 2.1ms)
